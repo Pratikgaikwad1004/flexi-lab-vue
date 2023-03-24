@@ -37,10 +37,10 @@
                                 </v-list-item>
                             </v-list>
                         </v-menu>
+                        <p>
+                            status
+                        </p>
                     </div>
-                    <p>
-                        status
-                    </p>
                 </v-list-item-icon>
             </v-list-item>
         </v-list>
