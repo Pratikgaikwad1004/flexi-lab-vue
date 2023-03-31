@@ -11,5 +11,8 @@
     components: {
       HelloWorld,
     },
+    props: {
+      search: Function
+    }
   }
 </script>

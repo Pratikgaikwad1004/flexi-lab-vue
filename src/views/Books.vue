@@ -1,5 +1,6 @@
 <template>
     <div>
+        <AppHeader title="Books" @search="search($event)" />
         <v-list dense>
             <v-list-item v-for="(item, i) in books" :key="i">
                 <v-list-item-avatar rounded="0">
@@ -49,10 +50,23 @@
 
 <script>
 import bookList from "@/data/books.json"
+import AppHeader from "@/components/AppHeader.vue";
 export default {
+    components: {
+        AppHeader
+    },
     data() {
         return {
-            books: bookList
+            books: bookList,
+        }
+    },
+    methods: {
+        search(e) {
+            if (e.length >= 1) {
+                this.books = bookList.filter((ele) => {
+                    console.log(ele);
+                })
+            }
         }
     }
 }
