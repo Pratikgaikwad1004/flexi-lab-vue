@@ -1,12 +1,13 @@
 <template>
     <div class="app-Header">
         <v-row>
-            <v-col cols="10">
+            <v-col cols="11">
                 <h3>{{ title }}</h3>
             </v-col>
-            <v-col cols="2">
-                <v-btn title="tooltip" text  @click="$emit('add')"></v-btn>
+            <v-col cols="1">
+                <v-btn :title="tooltip" text  @click="$emit('add')" class="ml-5">
                 <v-icon>mdi-plus </v-icon>
+            </v-btn>
             </v-col>
         </v-row>
         <v-row>

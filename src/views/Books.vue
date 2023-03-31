@@ -23,8 +23,10 @@
                             </template>
                             <v-list>
                                 <v-list-item>
-                                    <v-icon class="mr-5">mdi-pencil</v-icon>
-                                    <v-list-item-title>Edit</v-list-item-title>
+                                    <v-btn text>
+                                        <v-icon class="mr-5">mdi-pencil</v-icon>
+                                        <v-list-item-title>Edit</v-list-item-title>
+                                    </v-btn>
                                 </v-list-item>
                                 <v-list-item>
                                     <v-icon class="mr-5">mdi-delete</v-icon>
@@ -64,8 +66,13 @@ export default {
         search(e) {
             if (e.length >= 1) {
                 this.books = bookList.filter((ele) => {
-                    console.log(ele);
+                    if (ele.title.toLowerCase().includes(e.toLowerCase())) {
+                        return ele;
+                    }
                 })
+            }
+            else {
+                this.books = bookList
             }
         }
     }
